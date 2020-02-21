@@ -15,6 +15,11 @@ public class Game {
     private  String name;
     private  String publisher;
     private  String console;
+    // TODO
+    //  private String genre;
+    //  Add multiple consoles?
+    //  Reviews and Scores
+    //  Release dates 
 
     public Game(int id, String name, String publisher, String console) {
         this.id = id;
@@ -37,5 +42,11 @@ public class Game {
 
     public String getConsole() {
         return console;
+    }
+
+    @Override
+    public String toString() {
+        String gameString = String.format("[Game: %s, Console: %s, ID: %d]", name, console, id);
+        return gameString;
     }
 }
