@@ -18,7 +18,7 @@ public class GameController {
     @PostMapping("/addGame")
     public String saveGame(@RequestBody  Game game) {
         gameRepository.save(game);
-        return "Added game with id : " + game.getId();
+        return "Created => " + game;
     }
 
     @GetMapping("/findAllGames")
