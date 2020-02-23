@@ -19,7 +19,8 @@ public class Game {
     //  private String genre;
     //  Add multiple consoles?
     //  Reviews and Scores
-    //  Release dates 
+    //  Release dates
+    //  Add game without ID
 
     public Game(int id, String name, String publisher, String console) {
         this.id = id;

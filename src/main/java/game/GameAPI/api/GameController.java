@@ -3,6 +3,8 @@ package game.GameAPI.api;
 import game.GameAPI.model.Game;
 import game.GameAPI.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +32,12 @@ public class GameController {
     public Optional<Game> getGameById(int id) {
         return gameRepository.findById(id);
     }
+
+//    public Optional<Game> getGameByName(String name) {
+//        Query query = new Query();
+//        query.addCriteria(Criteria.where("name").is(name));
+//        List<Game> games = gameRepository.findAll(query, Game.class);
+//    }
 
     @DeleteMapping("/delete/{id}")
     public String deleteGame(@PathVariable int id) {
