@@ -5,11 +5,12 @@ import game.GameAPI.model.Game;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 public interface GameRepository extends MongoRepository<Game, Integer> {
 
-    @Query
-    Optional<Game> getGameByname(String name);
+    @Query("{ 'name' : ?0 }")
+    List<Game> getGameByname(String name);
 }
