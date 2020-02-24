@@ -33,11 +33,10 @@ public class GameController {
         return gameRepository.findById(id);
     }
 
-//    public Optional<Game> getGameByName(String name) {
-//        Query query = new Query();
-//        query.addCriteria(Criteria.where("name").is(name));
-//        List<Game> games = gameRepository.findAll(query, Game.class);
-//    }
+    @GetMapping("/Games/{name}")
+    public List<Game> getGameByName(String name) {
+        return gameRepository.getGameByname(name);
+    }
 
     @DeleteMapping("/delete/{id}")
     public String deleteGame(@PathVariable int id) {
