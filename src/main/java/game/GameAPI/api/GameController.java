@@ -33,9 +33,10 @@ public class GameController {
         return gameRepository.findById(id);
     }
 
-    @GetMapping("/Games/{name}")
-    public List<Game> getGameByName(String name) {
-        return gameRepository.getGameByname(name);
+    @RequestMapping(value="/Games/{name}", method = RequestMethod.GET)
+    public List<Game> getGameByName(@PathVariable("name") String name) {
+        System.out.println("Name: " + name);
+        return gameRepository.getGameByName(name);
     }
 
     @DeleteMapping("/delete/{id}")
